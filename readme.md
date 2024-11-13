@@ -162,7 +162,7 @@ You may want to do [final configuration](https://docs.moodle.org/405/en/Installi
     ```
     docker compose -f docker-compose.ssl.yaml run --rm certbot certonly --webroot --webroot-path /var/www/certbot/ --dry-run -d example.com
     ```
-- If there are no error, proceed with the same command but this time without the `--dry-run`
+- If there is no error, proceed with the same command but this time without the `--dry-run`
 - The SSL certificates will be saved inside `certbot/conf/live/<domain>/...`
 
 If issuance failed, you may want to see the first terminal regarding errors. Chances are:
