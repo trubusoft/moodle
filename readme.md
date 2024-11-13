@@ -142,7 +142,7 @@ docker compose -f docker-compose.production.yaml up -d
   ```
 
   By examining the docker logs, we can see that the `moodle` container returns 0 byte,
-  while the nginx container with the same link returns some bytes.
+  while the nginx container with the same request uri returns some bytes.
   This proves that `X-Accel-Redirect` is working.
 
 - If this is your first time installing moodle then a copyright page will appear, continued by dependencies page.
