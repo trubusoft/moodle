@@ -44,7 +44,7 @@ You may also need to adjust the database connection and `wwwroot` accordingly:
 
 ### Preparation
 - Clone this repo
-- Set permission to `moodle-data` directory ([why do 777 is needed?](https://docs.moodle.org/405/en/Installing_Moodle#:~:text=(not%20recommended)-,Create%20the%20(moodledata)%20data%20directory,-Moodle%20requires%20a))
+- Set permission to `moodle-data` directory ([why is 777 needed?](https://docs.moodle.org/405/en/Installing_Moodle#:~:text=(not%20recommended)-,Create%20the%20(moodledata)%20data%20directory,-Moodle%20requires%20a))
 
   ```
   sudo chown -R root:root moodle-data
