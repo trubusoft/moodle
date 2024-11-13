@@ -222,9 +222,9 @@ Sometimes we need to make an exact duplication (mirror) of all moodle files acro
 rsync -Wav --progress old_vm:/home/moodle/ new_vm:/home/moodle/
 ```
 
-This command is useful to preserve the exact file.
+This command is useful to preserve the exact files.
 
-For example: certbot files needs to be formatted as symlinks, and normal scp or rsync will break this.
+For example: certbot files needs to be formatted as symlinks, and scp or normal rsync will break this behavior.
 
 
 #### Useful References
