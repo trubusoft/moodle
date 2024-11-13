@@ -63,7 +63,7 @@ You may also need to adjust the database connection and `wwwroot` accordingly:
         rm .gitkeep
         git clone -b MOODLE_405_STABLE https://github.com/moodle/moodle.git .
         ```
-  - Copy or move `Dockerfile` from root repository inside `moodle` doler  
+  - Copy or move `Dockerfile` from root repository inside `moodle` folder  
   - no matter what option you picked, the resulting directory should be like this. Note that all moodle source code are placed directly inside the `moodle` folder
 
     ```
