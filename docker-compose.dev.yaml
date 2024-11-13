@@ -1,0 +1,49 @@
+# demonstrating local deployment with http and local database
+
+services:
+  moodle:
+    container_name: moodle
+    build:
+      context: ./moodle
+    environment:
+      - DB_HOST=database
+      - DB_PORT=5432
+      - DB_NAME=moodle
+      - DB_USER=user
+      - DB_PASSWORD=password
+      - WWW_ROOT=http://localhost
+    volumes:
+      - moodle_source:/var/www/html/moodle
+      - ./moodle-data:/home/moodle-data:rw
+      - ./moodle_docker-fpm.ini:/usr/local/etc/php/conf.d/docker-fpm.ini:ro
+      - ./moodle_config.php:/var/www/html/moodle/config.php:ro
+      - ./moodle-plugins/mass_enroll:/var/www/html/moodle/local/mass_enroll:ro
+    depends_on:
+      - database
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    volumes:
+      - ./nginx/http.conf:/etc/nginx/conf.d/default.conf:ro
+      - moodle_source:/var/www/html/moodle
+      - ./moodle-data:/home/moodle-data:rw
+    ports:
+      - "80:80"
+    depends_on:
+      - moodle
+  database:
+    image: postgres:16.4-alpine
+    container_name: database
+    volumes:
+      - database_volume:/var/lib/postgresql/data/
+    restart: always
+    shm_size: 128mb  # set shared memory limit when using docker-compose
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: moodle
+    ports:
+      - "5440:5432"
+volumes:
+  moodle_source:
+  database_volume:
