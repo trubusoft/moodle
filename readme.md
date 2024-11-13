@@ -181,7 +181,7 @@ docker compose -f docker-compose.ssl.yaml run --rm certbot certificates
 - Attempt SSL renewal
 
 ```
-docker compose -f docker-compose.production.yaml run --rm certbot renew [--dry-run]
+docker compose -f docker-compose.ssl.yaml run --rm certbot renew [--dry-run]
 ```
 
 Note: certbot only issue renewal on the last one third of a certificate's lifetime,
