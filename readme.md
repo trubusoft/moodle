@@ -89,8 +89,8 @@ You may also need to adjust the database connection and `wwwroot` accordingly:
 
 Please change `moodle_config.php` according to your need. You can find it on the root of this repository.
 By default, it already has:
-- database configuration and `wwwroot` being configured to read from environment variables
-- `XSendfile` is already enabled
+- database configuration and `wwwroot` being configured to read from environment variables (specified inside the compose file)
+- `XSendfile` enabled
 
 On build time, this file will be inserted as `config.php` inside the `moodle` directory.
 
