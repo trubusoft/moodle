@@ -245,3 +245,7 @@ For example: certbot files needs to be formatted as symlinks, and scp or normal 
     - `php -i`: phpinfo but cli version
     - `php -m`: all installed php modules
     - `php --ini`: all `.ini` files being used on current php instance
+
+---
+
+Happy learning!
