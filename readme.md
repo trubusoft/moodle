@@ -96,9 +96,9 @@ On build time, this file will be inserted as `config.php` inside the `moodle` di
 
 #### Configuring `php.ini`
 
-You may also want to configure the PHP-FPM container. To do this, please modify `moodle_docker-fpm.ini` as needed.
+You may also want to configure the PHP-FPM behavior. To do this, please modify `moodle_docker-fpm.ini` as needed.
 
-On build time, this file will be inserted as `docker-fpm.ini` inside the `moodle` directory to replace the original fpm.
+On build time, this file will be inserted as `docker-fpm.ini` inside the `moodle` directory to replace the original configuration.
 
 
 #### Changing file upload size
