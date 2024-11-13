@@ -188,9 +188,8 @@ Note: certbot only issue renewal on the last one third of a certificate's lifeti
 so running the renewal command on a fresh certificate won't likely hit the rate limit policy.
 
 
-- Reloading the `nginx` container for certificate change
-The new certificate will not be served before nginx is restarted. 
-- To restart nginx without down time, use:
+- The new certificate will not be served before nginx is restarted. 
+To restart nginx without down time, use:
 
 ```
 docker exec nginx service nginx reload
