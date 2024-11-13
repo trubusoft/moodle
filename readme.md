@@ -117,7 +117,8 @@ post_max_size = 50M
 client_max_body_size 60M;
 ```
 
-_Note_: You may need to do `docker compose up -d --build --force-recreate` to make sure the new configuration being applied.
+_Note_: You may need to do `docker compose up -d --build --force-recreate` 
+to make sure the new configuration is being applied to the current stack that you've already deployed.
 
 ### Spinning up the stack
 
