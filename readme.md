@@ -32,7 +32,7 @@ You may also need to adjust the database connection and `wwwroot` accordingly:
 - `moodle`: contains moodle source code, which you manually bring a version of your choice inside this folder
 - `moodle-data`: contains moodle data that will be shared inside `nginx` and `moodle` _container_
 - `moodle-plugins`: contains moodle plugins and will be inserted inside `moodle` folder on build
-- `nginx`: contains nginx configuration for both http and https scenario
+- `nginx`: contains nginx configurations for both http and https scenario
 
 ## Installing
 
@@ -44,7 +44,7 @@ You may also need to adjust the database connection and `wwwroot` accordingly:
 
 ### Preparation
 - Clone this repo
-- Set permission to `moodle-data` directory ([why is 777 needed?](https://docs.moodle.org/405/en/Installing_Moodle#:~:text=(not%20recommended)-,Create%20the%20(moodledata)%20data%20directory,-Moodle%20requires%20a))
+- Set permission to `moodle-data` directory ([why it needs 777?](https://docs.moodle.org/405/en/Installing_Moodle#:~:text=(not%20recommended)-,Create%20the%20(moodledata)%20data%20directory,-Moodle%20requires%20a))
 
   ```
   sudo chmod -R 0777 moodle-data
@@ -92,13 +92,13 @@ By default, it already has:
 - database configuration and `wwwroot` being configured to read from environment variables (specified inside the compose file)
 - `XSendfile` enabled
 
-On build time, this file will be inserted as `config.php` inside the `moodle` directory.
+At build time, this file will be inserted as `config.php` inside the `moodle` directory.
 
 #### Configuring `php.ini`
 
 You may also want to configure the PHP-FPM behavior. To do this, please modify `moodle_docker-fpm.ini` as needed.
 
-On build time, this file will be inserted as `docker-fpm.ini` inside the `moodle` directory to replace the original configuration.
+At build time, this file will be inserted as `docker-fpm.ini` inside the `moodle` directory to replace the original configuration.
 
 
 #### Changing file upload size
@@ -168,7 +168,7 @@ You may want to do [final configuration](https://docs.moodle.org/405/en/Installi
 If issuance failed, you may want to see the first terminal regarding errors. Chances are:
 - Your domain doesn't correctly point to your VM's IP
 - Domain is pointed correctly, but VM has firewall on port `80`
-- ACME failed or reverse proxy failed fue to `nginx` container not running
+- ACME failed or reverse proxy failed due to `nginx` container not running
 
 ### Manually renewing the certificate
 - Make sure that `nginx` and `certbot` container are running
